@@ -1,7 +1,7 @@
 title = "sǝɯɐƃ ǝsnlɔǝɹ"
 baseURL = "https://recluse-games.com"
 languageCode = "en-US"
-theme = "osprey-delight"
+theme = "recluse"
 tags = ["indie", "games", "game"]
 # canonifyURLS = true
 # googleAnalytics = ""
@@ -10,9 +10,9 @@ enableEmoji = true
 
 ## Generic theme parameters:
 [Params]
-  author = "kdevo"
-  email = ""
-  description = "osprey-delight example site"
+  author = "cmallas"
+  email = "self@chrisdallas.tech"
+  description = "recluse games site"
   tagline = "recluse games"
   logoBig = "/images/recluse-logo.jpg"
   # [str] This is the logo that will be shown in the left corner of the nav bar.
@@ -36,7 +36,7 @@ enableEmoji = true
   # [str] Link to your LinkedIn.
   linkedin = ""
   # [str] Link to your GitHub.
-  github = "https://github.com/kdevo/osprey-delight"
+  github = "https://github.com/recluse-games/"
   # [str] Link to your Facebook.
   # facebook = ""
   # [str] Link to your Instagram.
@@ -52,8 +52,6 @@ enableEmoji = true
   useTermynal = true
   # [bool] Lazy loading of images with lazysizes (SEO-friendly).
   lazyloading = true
-  # [str] Use Basin contact form.
-  #ajaxBasin = "https://usebasin.com/f/{YOUR-12-CHAR-FORM-KEY-HERE}"
   googleTagManager = ""
   # [bool] Enable usage of your own 'assets/scss/_custom.css'.
   customCSS = false
@@ -65,14 +63,12 @@ enableEmoji = true
   #   This will use information that is publically available about your GitHub user profile at https://api.github.com/users/{USERNAME}.
   # structuredDataFromGithub = "USERNAME"
 
-## Configure contact form:
-[Params.Contact]
-  # [str[]] i18n keys used to display in an additional select box.
-  #   Comment out if you want to disable it.
-  select = ["generic", "coop", "business", "project"]
-
-
 [[menu.main]]
   name = "Games"
   url  = "/#games"
   weight = 1
+
+[[menu.main]]
+  name = "Team"
+  url  = "/#team"
+  weight = 2
