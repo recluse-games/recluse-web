@@ -40,9 +40,8 @@ enableEmoji = true
   # [str] Link to your Facebook.
   # facebook = ""
   # [str] Link to your Instagram.
-  # instagram = ""
-  # [str] Link to your StackOverflow.
-  stackoverflow = ""
+   instagram = ""
+
 
 
 ## Theme features:
@@ -64,8 +63,8 @@ enableEmoji = true
   # structuredDataFromGithub = "USERNAME"
 
 [[menu.main]]
-  name = "Games"
-  url  = "/#games"
+  name = "Play"
+  url  = "/#play"
   weight = 1
 
 [[menu.main]]
