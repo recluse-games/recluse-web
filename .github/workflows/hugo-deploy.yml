@@ -1,0 +1,28 @@
+name: Hugo Deploy
+
+on:
+  push:
+    paths-ignore:
+      - 'infra/**'
+
+jobs:
+  hugo_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Setup hugo
+          uses: peaceiris/actions-hugo@v2
+          with:
+            hugo-version: "0.64.0"
+
+      - name: Build
+          run: hugo --minify
+
+      - name: Deploy to S3
+          if: github.ref == 'refs/heads/master'
+          run: $HOME/hugo -v deploy --maxDeletes -1
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
