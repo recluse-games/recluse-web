@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy to S3
         if: github.ref == 'refs/heads/master'
-        run: $HOME/hugo -v deploy --maxDeletes -1
+        run: hugo -v deploy --maxDeletes -1
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
