@@ -52,6 +52,7 @@ jobs:
           working_dir: 'infra'
           cdk_subcommand: 'deploy'
           cdk_stack: 'RecluseWebInfraStack'
+          actions_comment: false∂
           args: '--require-approval never'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
