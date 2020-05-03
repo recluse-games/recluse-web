@@ -1,6 +1,8 @@
 name: CDK Deploy
 
 on:
+  watch:
+    types: [started]
   push:
     paths:
       - 'infra/**'
@@ -12,12 +14,12 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-#      - name: Configure AWS Credentials
-#        uses: aws-actions/configure-aws-credentials@v1
-#        with:
-#          aws-access-key-id: ${{ secrets.recluse_web_access_key }}
-#          aws-secret-access-key: ${{ secrets.recluse_web_secret_key }}
-#          aws-region: us-west-2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.recluse_web_access_key }}
+          aws-secret-access-key: ${{ secrets.recluse_web_secret_key }}
+          aws-region: us-west-2
 
       - name: NPM install
         run: cd infra && npm install
@@ -28,10 +30,6 @@ jobs:
           cdk_subcommand: 'diff'
           actions_comment: true
           working_dir: 'infra'
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
-          AWS_DEFAULT_REGION: 'us-west-2'
 
       - name: cdk synth
         uses: youyo/aws-cdk-github-actions@master
@@ -39,10 +37,6 @@ jobs:
           cdk_subcommand: 'synth'
           cdk_version: '1.36.1'
           working_dir: 'infra'
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
-          AWS_DEFAULT_REGION: 'us-west-2'
 
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@master
@@ -52,7 +46,3 @@ jobs:
           cdk_stack: 'RecluseWebInfraStack'
           actions_comment: false∂
           args: '--require-approval never'
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
-          AWS_DEFAULT_REGION: 'us-west-2'

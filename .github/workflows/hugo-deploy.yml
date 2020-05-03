@@ -1,8 +1,6 @@
 name: Hugo Deploy
 
 on:
-  watch:
-    types: [started]
   push:
     paths-ignore:
       - 'infra/**'
