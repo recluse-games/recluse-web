@@ -42,5 +42,5 @@ jobs:
           working_dir: 'infra'
           cdk_subcommand: 'deploy'
           cdk_stack: 'RecluseWebInfraStack'
-          actions_comment: false∂
+          actions_comment: false
           args: '--require-approval never'
