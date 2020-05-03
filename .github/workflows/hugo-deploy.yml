@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
       - 'infra/**'
+      - '.github/**'
 
 jobs:
   hugo_deploy:
