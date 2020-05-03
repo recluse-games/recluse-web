@@ -1,8 +1,6 @@
 name: CDK Deploy
 
 on:
-  watch:
-    types: [started]
   push:
     paths:
       - 'infra/**'
