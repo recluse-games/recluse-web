@@ -1,5 +1,5 @@
 title = "sǝɯɐƃ ǝsnlɔǝɹ"
-baseURL = "https://recluse-games.com"
+baseURL = "http://recluse-games.com.s3-website-us-west-2.amazonaws.com"
 languageCode = "en-US"
 theme = "recluse"
 tags = ["indie", "games", "game"]
