@@ -1,8 +1,6 @@
 name: CDK Deploy
 
 on:
-  watch:
-    types: [started]
   push:
     paths:
       - 'infra/**'
@@ -31,14 +29,14 @@ jobs:
           actions_comment: true
           working_dir: 'infra'
 
-      - name: cdk synth
+      - name: CDK synth
         uses: youyo/aws-cdk-github-actions@master
         with:
           cdk_subcommand: 'synth'
           cdk_version: '1.36.1'
           working_dir: 'infra'
 
-      - name: cdk deploy
+      - name: CDK deploy
         uses: youyo/aws-cdk-github-actions@master
         with:
           working_dir: 'infra'
