@@ -6,7 +6,6 @@ on:
   push:
     paths:
       - 'infra/**'
-  
 
 jobs:
   cdk_deploy:
@@ -22,7 +21,10 @@ jobs:
 #          aws-secret-access-key: ${{ secrets.recluse_web_secret_key }}
 #          aws-region: us-west-2
 
-      - name: cdk diff
+      - name: NPM install
+        run: cd infra && npm install
+
+      - name: CDK diff
         uses: youyo/aws-cdk-github-actions@master
         with:
           cdk_subcommand: 'diff'
