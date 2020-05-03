@@ -35,26 +35,24 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
           AWS_DEFAULT_REGION: 'us-west-2'
 
-#      - name: cdk synth
-#        uses: youyo/aws-cdk-github-actions@master
-#        with:
-#          cdk_subcommand: 'synth'
-#          cdk_version: '1.36.1'
-#          working_dir: 'infra'
-#        env:
-#          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
-#          AWS_DEFAULT_REGION: 'us-west-2'
-#
-#      - name: cdk deploy
-#        uses: youyo/aws-cdk-github-actions@master
-#        with:
-#          working_dir: 'infra'
-#          cdk_subcommand: 'deploy'
-#          cdk_stack: 'stack1'
-#          actions_comment: false
-#          args: '--require-approval never'
-#        env:
-#          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
-#          AWS_DEFAULT_REGION: 'us-west-2'
+      - name: cdk synth
+        uses: youyo/aws-cdk-github-actions@master
+        with:
+          cdk_subcommand: 'synth'
+          cdk_version: '1.36.1'
+          working_dir: 'infra'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
+          AWS_DEFAULT_REGION: 'us-west-2'
+
+      - name: cdk deploy
+        uses: youyo/aws-cdk-github-actions@master
+        with:
+          working_dir: 'infra'
+          cdk_subcommand: 'deploy'
+          cdk_stack: 'RecluseWebInfraStack'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.recluse_web_access_key }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.recluse_web_secret_key }}
+          AWS_DEFAULT_REGION: 'us-west-2'
