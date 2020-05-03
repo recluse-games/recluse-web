@@ -79,7 +79,7 @@ name = "recluse-web-target"
 
 # S3; see https://gocloud.dev/howto/blob/#s3
 # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
-# URL = "s3://<Bucket Name>?region=<AWS region>"
+URL = "s3://recluse-games.com?region=us-west-2"
 
 # Optionally, you can include or exclude specific files.
 # See https://godoc.org/github.com/gobwas/glob#Glob for the glob pattern syntax.
