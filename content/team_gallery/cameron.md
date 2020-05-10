@@ -4,8 +4,6 @@ title = "cameron"
 image = "team/cameron.png"
 alt = "cameron"
 color = "#66000000"
-linkView = "https://github.com/recluse-games/documentation"
-linkCode = "https://github.com/recluse-games/documentation"
 +++
 
-Demo for gallery example
+Hello
