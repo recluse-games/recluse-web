@@ -1,4 +1,0 @@
-{
-  "app": "npx ts-node bin/recluse-web-infra.ts",
-  "requireApproval": "never"
-}
